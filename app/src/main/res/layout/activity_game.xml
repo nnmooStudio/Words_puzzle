@@ -18,8 +18,8 @@
         android:layout_centerHorizontal="true">
 
         <ImageView
-            android:layout_width="313dp"
-            android:layout_height="206dp"
+            android:layout_width="249dp"
+            android:layout_height="117dp"
             android:id="@+id/imageView_next"
             android:layout_gravity="center_horizontal|bottom"
             android:src="@drawable/next" />
@@ -42,31 +42,38 @@
             android:layout_width="wrap_content"
             android:layout_height="39dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="红队：1分"
+            android:text="红队：0分"
             android:id="@+id/textView_red"
             android:layout_gravity="left|top" />
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="100dp"
+            android:layout_height="139dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="点播放按钮开始"
             android:id="@+id/textView_show_words"
             android:layout_alignRight="@+id/frameLayout"
             android:layout_alignEnd="@+id/frameLayout"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:gravity="center"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_gravity="center_horizontal|top" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="39dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="蓝队：1分"
+            android:text="蓝队：0分"
             android:id="@+id/textView_blue"
             android:layout_gravity="right|top" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="56dp"
+            android:id="@+id/imageView_play"
+            android:layout_gravity="center"
+            android:src="@drawable/play" />
     </FrameLayout>
 
 </RelativeLayout>

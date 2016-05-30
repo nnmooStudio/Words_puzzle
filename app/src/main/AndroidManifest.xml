@@ -15,11 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActivity" />
-        <activity
-            android:name=".GuideActivity"
-            android:label="@string/title_activity_guide"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".GameActivity"
+            android:configChanges="orientation|screenSize"
+            >
+
+            <intent-filter>
+                <action android:name="com.nnmoo.www.words_puzzle.GameActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

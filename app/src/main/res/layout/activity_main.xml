@@ -27,7 +27,7 @@
         <ImageView
             android:layout_width="137dp"
             android:layout_height="65dp"
-            android:id="@+id/imageView"
+            android:id="@+id/imageView_start_game"
             android:layout_gravity="right|bottom"
             android:src="@drawable/start_game" />
 
