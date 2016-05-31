@@ -94,6 +94,8 @@ public class GameActivity extends AppCompatActivity {
                     imageView_play.clearAnimation();
                     textView_show_words.setText("点播放按钮开始");
                     imageView_play.setImageResource(R.drawable.play);
+                    if(timer!=null)
+                        timer.cancel();
                 } else {
                     reset_drum_song();
                     imageView_play.startAnimation(animation_set);
@@ -134,8 +136,8 @@ public class GameActivity extends AppCompatActivity {
         animation_alpha_play = new AlphaAnimation(1.0F, 0.5F);
         animation_rotate.setDuration(1000);
         animation_alpha_play.setDuration(1000);
-        //animation_rotate.setRepeatCount(Animation.INFINITE);
-        //animation_alpha_play.setRepeatCount(Animation.INFINITE);
+        animation_rotate.setRepeatCount(Animation.INFINITE);
+        animation_alpha_play.setRepeatCount(Animation.INFINITE);
         animation_set = new AnimationSet(false);
         animation_set.addAnimation(animation_rotate);
         animation_set.addAnimation(animation_alpha_play);
@@ -143,17 +145,18 @@ public class GameActivity extends AppCompatActivity {
 
     //start_game_event
     private void start_game() {
-        random = new Random(60);
+        random = new Random();
         timer = new Timer();
-        long time_to_stop = random.nextInt() * 1000 + 45000;
-        timer.schedule(new game_time_event(), 7000L);
+        int  rand= random.nextInt(60);
+        long time_to_stop=rand*1000+1000;
+        timer.schedule(new game_time_event(), time_to_stop);
     }
 
     //stop_Animation
     private void back_to_wait_model() {
         drum_song.stop();
         imageView_play.setImageResource(R.drawable.play);
-        //imageView_play.clearAnimation();
+        imageView_play.clearAnimation();
     }
 
 
