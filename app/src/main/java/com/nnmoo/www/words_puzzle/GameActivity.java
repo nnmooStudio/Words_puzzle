@@ -93,11 +93,13 @@ public class GameActivity extends AppCompatActivity {
                     drum_song.stop();
                     imageView_play.clearAnimation();
                     textView_show_words.setText("点播放按钮开始");
+                    imageView_play.setImageResource(R.drawable.play);
                 } else {
                     reset_drum_song();
                     imageView_play.startAnimation(animation_set);
                     drum_song.start();
                     textView_show_words.setText("点下一个按钮");
+                    imageView_play.setImageResource(R.drawable.pause);
                     start_game();
                 }
             }
@@ -113,7 +115,7 @@ public class GameActivity extends AppCompatActivity {
 
     protected void onPause() {
         super.onPause();
-        stop_Animation_music();
+        back_to_wait_model();
     }
 
     //页面回来事件
@@ -132,8 +134,8 @@ public class GameActivity extends AppCompatActivity {
         animation_alpha_play = new AlphaAnimation(1.0F, 0.5F);
         animation_rotate.setDuration(1000);
         animation_alpha_play.setDuration(1000);
-        animation_rotate.setRepeatCount(Animation.INFINITE);
-        animation_alpha_play.setRepeatCount(Animation.INFINITE);
+        //animation_rotate.setRepeatCount(Animation.INFINITE);
+        //animation_alpha_play.setRepeatCount(Animation.INFINITE);
         animation_set = new AnimationSet(false);
         animation_set.addAnimation(animation_rotate);
         animation_set.addAnimation(animation_alpha_play);
@@ -144,13 +146,14 @@ public class GameActivity extends AppCompatActivity {
         random = new Random(60);
         timer = new Timer();
         long time_to_stop = random.nextInt() * 1000 + 45000;
-        timer.schedule(new game_time_event(), 5000L, 9000L);
+        timer.schedule(new game_time_event(), 7000L);
     }
 
     //stop_Animation
-    private void stop_Animation_music() {
+    private void back_to_wait_model() {
         drum_song.stop();
-        imageView_play.clearAnimation();
+        imageView_play.setImageResource(R.drawable.play);
+        //imageView_play.clearAnimation();
     }
 
 
@@ -159,13 +162,20 @@ public class GameActivity extends AppCompatActivity {
 
     class game_time_event extends TimerTask {
         public void run() {
-            //drum_song.stop();
 
             drum_end.start();
             timer.cancel();
-            drum_song.stop();
-            imageView_play.clearAnimation();
-            //imageView_play.callOnClick();
+            /////////////////////////////////////////////////////////////////////////////////////
+            //TimerTask runs on a different thread. So update ui on the main ui thread. Use runonuithread
+            ////////////////////////////////////////////////////////////////////////////////////
+            runOnUiThread(new Runnable() //run on ui thread
+            {
+                public void run()
+                {
+                    back_to_wait_model();
+                }
+            });
+
         }
     }
     }
