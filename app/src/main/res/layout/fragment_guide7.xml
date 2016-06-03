@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="围成一圈"
+            android:text="失误"
             android:id="@+id/textView"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -28,13 +28,13 @@
             android:layout_width="266dp"
             android:layout_height="363dp"
             android:id="@+id/imageView"
-            android:src="@drawable/guide0" />
+            android:src="@drawable/guide6" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="79dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="将所有玩家分成红绿两队，围成一个圈，红绿两队玩家要间隔开来。"
+            android:text="游戏过程中，倘若玩家不小心说出手机中的字或词，则对方加分。"
             android:id="@+id/textView2"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"

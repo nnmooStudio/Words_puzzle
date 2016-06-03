@@ -13,8 +13,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imageView_start_game;
+    ImageView imageView_rule;
     ImageView imageView_logo;
-    TextView textView_kuaicai;
+
     MediaPlayer beep;
 
     @Override
@@ -35,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
                 beep.start();
                 Intent intent_sart_game=new Intent("com.nnmoo.www.words_puzzle.GameActivity");
                 startActivity(intent_sart_game);
+            }
+        });
+        //规则按钮事件
+        imageView_rule=(ImageView) findViewById(R.id.imageView_rule);
+        imageView_rule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation animation_alpha=new AlphaAnimation(1.0f,0.0f);
+                animation_alpha.setDuration(300);
+                imageView_rule.startAnimation(animation_alpha);
+                beep.start();
+                Intent intent_rule=new Intent("com.nnmoo.www.words_puzzle.GuideActivity");
+                startActivity(intent_rule);
             }
         });
         //词logo动画事件

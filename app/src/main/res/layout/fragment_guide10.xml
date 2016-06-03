@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="围成一圈"
+            android:text="再加分"
             android:id="@+id/textView"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -25,20 +25,45 @@
             android:textSize="40dp" />
 
         <ImageView
-            android:layout_width="266dp"
-            android:layout_height="363dp"
+            android:layout_width="132dp"
+            android:layout_height="181dp"
             android:id="@+id/imageView"
-            android:src="@drawable/guide0" />
+            android:src="@drawable/guide8" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="79dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="将所有玩家分成红绿两队，围成一个圈，红绿两队玩家要间隔开来。"
+            android:text="此时，成功转移手机的红队还有机会加分，红队可根据之前绿队所有表述，尝试猜出该词，若成功，再加一分。"
             android:id="@+id/textView2"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="30分决胜"
+            android:id="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="40dp"
+            android:layout_row="3"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="游戏继续，两队按圆形按钮记录自己的得分。直到有一队达到30分，游戏结束，双方也可以协调决定最终获胜比分。"
+            android:id="@+id/textView4"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="4"
+            android:layout_column="0" />
 
     </GridLayout>
 
